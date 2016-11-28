@@ -1,6 +1,5 @@
 package base;
 
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -12,12 +11,10 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-
 import domain.StudentDomainModel;
 import util.HibernateUtil;
 
 public class StudentDAL  {
-
 
 	/**
 	 * addStudent - Method adds a student to the database
@@ -41,7 +38,6 @@ public class StudentDAL  {
 		}
 		return stu;
 	}
-	
 	
 	public static ArrayList<StudentDomainModel> getStudents() {
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -69,7 +65,6 @@ public class StudentDAL  {
 		}
 		return stus;
 	}		
-	
 	
 	public static StudentDomainModel getStudent(UUID stuID) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -107,7 +102,6 @@ public class StudentDAL  {
 			StudentDomainModel stu = (StudentDomainModel) session.get(StudentDomainModel.class, stuID);
 			session.delete(stu);
 		
-			
 			tx.commit();
 		} catch (HibernateException e) {
 			if (tx != null)
@@ -118,7 +112,6 @@ public class StudentDAL  {
 		}
 
 	}	
-	
 
 	public static StudentDomainModel updateStudent(StudentDomainModel stu) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -142,10 +135,5 @@ public class StudentDAL  {
 
 		return stu;
 	}		
-	
-	
-	
-	
-	
-	
+		
 }

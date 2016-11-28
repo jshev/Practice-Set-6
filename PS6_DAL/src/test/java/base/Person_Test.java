@@ -42,7 +42,7 @@ public class Person_Test {
 		
 		person1.setPersonID(person1UUID);
 		person1.setFirstName("Mingkun");
-		person1.setMiddleName("a");
+		person1.setMiddleName("A");
 		person1.setLastName("Chen");
 		person1.setBirthday(person1Birth);
 		person1.setCity("Elkton");
