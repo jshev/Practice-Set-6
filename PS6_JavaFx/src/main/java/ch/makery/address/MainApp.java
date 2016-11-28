@@ -48,20 +48,15 @@ public class MainApp extends Application {
     	RefreshPersonTable();
     }
     
-    
     public void  RefreshPersonTable()
     {
     	personData.clear();
     	
-    	//TODO:	When PersonDAL.getPersons() is complete, fix the code 
+    	ArrayList<PersonDomainModel> people = PersonDAL.getPersons();
     	
-    	ArrayList<PersonDomainModel> people = null;
-    	// people = PersonDAL.getPersons();
-    	
-    	for (PersonDomainModel p: people)
-    	{
+    	for (PersonDomainModel p: people) {
     		personData.add(new Person(p.getPersonID(), p.getFirstName(), p.getMiddleName(),p.getLastName(), p.getStreet(), p.getPostalCode(),p.getCity(), p.getBirthday()));
-    	}	
+    	}
     }
 
     public ObservableList<Person> getPersonData() {
@@ -145,7 +140,7 @@ public class MainApp extends Application {
      */
     public boolean showPersonEditDialog(Person person) {
         try {
-            // Load the fxml file and create a new stage for the popup dialog.
+            // Load the fxml file and create a new stage for the pop-up dialog.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/PersonEditDialog.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
@@ -181,7 +176,7 @@ public class MainApp extends Application {
      */
     public void showBirthdayStatistics() {
         try {
-            // Load the fxml file and create a new stage for the popup.
+            // Load the fxml file and create a new stage for the pop-up.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/BirthdayStatistics.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
